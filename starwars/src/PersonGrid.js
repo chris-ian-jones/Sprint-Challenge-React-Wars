@@ -75,7 +75,7 @@ const PersonGrid = () => {
       {pageNumbers.map(page => 
             <PaginationButton onClick={() => setPageIndex(page.pageNumber)} key={page.pageNumber}>Page {page.pageNumber}</PaginationButton>
         )}
-        <PaginationButton onClick={() => setPageIndex(pageIndex + 1)}>Next</PaginationButton>
+        <PaginationButton onClick={() => setPageIndex(pageIndex === 9 ? pageIndex - 8 : pageIndex + 1)}>Next</PaginationButton>
         </ButtonContainer>
       </FlexRow>
     );
