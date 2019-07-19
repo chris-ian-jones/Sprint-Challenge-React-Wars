@@ -10,14 +10,11 @@ const PersonGrid = () => {
         axios
             .get('https://swapi.co/api/people/')
             .then(response => {
-                // const responseData = response.results
-                // setData(responseData)
-                // console.log('a', responseData)
-                console.log(response)
+                setData(response.data.results)
             })
 
     }, [])
-    // console.log('b', responseData)
+    console.log('b', data)
     return (
       <div>
           <p>placeholder text</p>
