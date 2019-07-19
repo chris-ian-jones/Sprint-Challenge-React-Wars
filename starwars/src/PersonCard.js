@@ -19,44 +19,36 @@ import 'semantic-ui-css/semantic.min.css'
   
 //   export default PersonCard;
 
-const PersonCard = () => (
+const PersonCard = (props) => (
     <React.Fragment>
       <Divider horizontal>
         <Header as='h4'>
-          <Icon name='tag' />
-          Description
-        </Header>
-      </Divider>
-  
-      <p>
-        Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs
-        worldwide.
-      </p>
-  
-      <Divider horizontal>
-        <Header as='h4'>
-          <Icon name='bar chart' />
-          Specifications
+          <Icon name='user' />
+          {props.name}
         </Header>
       </Divider>
   
       <Table definition>
         <Table.Body>
           <Table.Row>
-            <Table.Cell width={2}>Size</Table.Cell>
-            <Table.Cell>1" x 2"</Table.Cell>
+            <Table.Cell>Name</Table.Cell>
+            <Table.Cell>{props.eye_color}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>Weight</Table.Cell>
-            <Table.Cell>6 ounces</Table.Cell>
+            <Table.Cell>Eye Color</Table.Cell>
+            <Table.Cell>{props.eye_color}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>Color</Table.Cell>
-            <Table.Cell>Yellowish</Table.Cell>
+            <Table.Cell>Hair Color</Table.Cell>
+            <Table.Cell>{props.hair_color}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>Odor</Table.Cell>
-            <Table.Cell>Not Much Usually</Table.Cell>
+            <Table.Cell>Height</Table.Cell>
+            <Table.Cell>{props.height}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Gender</Table.Cell>
+            <Table.Cell>{props.gender}</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
