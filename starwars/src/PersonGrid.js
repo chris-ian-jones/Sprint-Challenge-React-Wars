@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import axios from 'axios'
 import PersonCard from './PersonCard';
 
-// const Title = styled.h1`
-//     font-size: 1.5em;
-//     text-align: center;
-//     color: palevioletred;
-// `
-
 const FlexCenterDiv = styled.div`
     width: 98vw;
     height: 50vh;
@@ -22,21 +16,38 @@ const FlexCenterDiv = styled.div`
 
 const FlexRow = styled.div`
     display: flex;
+    flex-direction: column;
 `
+
+const PaginationButton = styled.button`
+    width: 100px;
+    height: 50px;
+    color: blue;
+`
+
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+`
+
+const PageNumberArray = [{pageNumber: 1}, {pageNumber: 2}, {pageNumber: 3}, {pageNumber: 4}, {pageNumber: 5}, {pageNumber: 6}, {pageNumber: 7}, {pageNumber: 8}, {pageNumber: 9}]
 
 const PersonGrid = () => {
 
     const [data, setData] = useState([])
+    const [pageNumbers, setPageNumbers] = useState(PageNumberArray)
+    const [pageIndex, setPageIndex] = useState(1)
 
     useEffect(() => {
         axios
-            .get('https://swapi.co/api/people/')
+            .get(`https://swapi.co/api/people/?page=${pageIndex}`)
             .then(response => {
                 setData(response.data.results)
             })
 
     }, [])
-    console.log('b', data)
+
     return (
         <FlexRow>
       <FlexCenterDiv>
@@ -50,7 +61,13 @@ const PersonGrid = () => {
             height={character.height}
             />
         )}
+        
       </FlexCenterDiv>
+      <ButtonContainer>
+      {pageNumbers.map(page => 
+            <PaginationButton>Page {page.pageNumber}</PaginationButton>
+        )}
+        </ButtonContainer>
       </FlexRow>
     );
   }
