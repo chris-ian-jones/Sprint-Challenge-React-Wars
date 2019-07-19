@@ -22,7 +22,14 @@ const FlexRow = styled.div`
 const PaginationButton = styled.button`
     width: 100px;
     height: 50px;
-    color: blue;
+    background-color: dodgerblue;
+    color: white;
+
+    :hover {
+        background-color: white;
+        color: dodgerblue;
+        border: 1px solid dodgerblue;
+    } 
 `
 
 const ButtonContainer = styled.div`
@@ -46,8 +53,9 @@ const PersonGrid = () => {
                 setData(response.data.results)
             })
 
-    }, [])
-
+    }, [pageIndex])
+    console.log(pageIndex)
+    console.log(data)
     return (
         <FlexRow>
       <FlexCenterDiv>
@@ -65,8 +73,9 @@ const PersonGrid = () => {
       </FlexCenterDiv>
       <ButtonContainer>
       {pageNumbers.map(page => 
-            <PaginationButton>Page {page.pageNumber}</PaginationButton>
+            <PaginationButton onClick={() => setPageIndex(page.pageNumber)} key={page.pageNumber}>Page {page.pageNumber}</PaginationButton>
         )}
+        <PaginationButton onClick={() => setPageIndex(pageIndex + 1)}>Next</PaginationButton>
         </ButtonContainer>
       </FlexRow>
     );
