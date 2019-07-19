@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
+import PersonCard from './PersonCard';
 
 const PersonGrid = () => {
 
@@ -18,6 +19,7 @@ const PersonGrid = () => {
     return (
       <div>
           <p>placeholder text</p>
+          <PersonCard></PersonCard>
       </div>
     );
   }
