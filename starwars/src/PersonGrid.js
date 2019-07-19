@@ -18,8 +18,16 @@ const PersonGrid = () => {
     console.log('b', data)
     return (
       <div>
-          <p>placeholder text</p>
-          <PersonCard></PersonCard>
+        {data.map(character => 
+            <PersonCard
+            key={character.name} 
+            name={character.name} 
+            eye_color={character.eye_color} 
+            hair_color={character.hair_color} 
+            gender={character.gender}
+            height={character.height}
+            />
+        )}
       </div>
     );
   }
