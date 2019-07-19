@@ -11,11 +11,13 @@ import PersonCard from './PersonCard';
 
 const FlexCenterDiv = styled.div`
     width: 98vw;
+    height: 50vh;
     margin-left: 1vw;
     margin-right: 1vw;
     display: flex;
-    // align-items: center;
+    align-items: baseline;
     justify-content: space-between;
+    flex-wrap: wrap;
 `
 
 const FlexRow = styled.div`

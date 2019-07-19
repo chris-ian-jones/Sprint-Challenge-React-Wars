@@ -4,11 +4,19 @@ import { Divider, Header, Icon, Table } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
 const CardContainer = styled.div`
-    // width: 300px;
+    width: 15%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 20px;
+`
+
+const BackgroundDiv = styled.div`
+    background-color: red;
 `
 
 const PersonCard = (props) => (
     <CardContainer>
+       
       <Divider horizontal>
         <Header as='h4'>
           <Icon name='user' />
