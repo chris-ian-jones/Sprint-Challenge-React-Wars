@@ -3,7 +3,8 @@ import './App.css';
 import styled from 'styled-components'
 import PersonGrid from './PersonGrid';
 
-const styledContainer = styled.div`
+// use of styled-components
+const StyledContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -20,10 +21,10 @@ const App = () => {
 
   return (
     <div className="App">
-    <styledContainer>
-      <h1 className="Header">React Wars</h1>
-      <PersonGrid></PersonGrid>
-      </styledContainer>
+    <h1 className="Header">React Wars</h1>
+      <StyledContainer>
+        <PersonGrid></PersonGrid>
+      </StyledContainer>
     </div>
   );
 }
