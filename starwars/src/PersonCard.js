@@ -3,22 +3,6 @@ import styled from 'styled-components'
 import { Divider, Header, Icon, Table } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
-
-// const PersonCard = (props) => {
-
-//     return (
-//       <div>
-//           <p>{props.name}</p>
-//           <p>{props.eye_color}</p>
-//           <p>{props.hair_color}</p>
-//           <p>{props.gender}</p>
-//           <p>{props.height}</p>
-//       </div>
-//     );
-//   }
-  
-//   export default PersonCard;
-
 const PersonCard = (props) => (
     <React.Fragment>
       <Divider horizontal>

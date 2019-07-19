@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import axios from 'axios'
 import PersonCard from './PersonCard';
 
+const Title = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: palevioletred;
+`
+
 const PersonGrid = () => {
 
     const [data, setData] = useState([])
@@ -18,6 +24,7 @@ const PersonGrid = () => {
     console.log('b', data)
     return (
       <div>
+        <Title>Title</Title>
         {data.map(character => 
             <PersonCard
             key={character.name} 
