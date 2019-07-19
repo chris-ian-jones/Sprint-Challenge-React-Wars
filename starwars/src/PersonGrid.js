@@ -3,10 +3,23 @@ import styled from 'styled-components'
 import axios from 'axios'
 import PersonCard from './PersonCard';
 
-const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: palevioletred;
+// const Title = styled.h1`
+//     font-size: 1.5em;
+//     text-align: center;
+//     color: palevioletred;
+// `
+
+const FlexCenterDiv = styled.div`
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+`
+
+const FlexRow = styled.div`
+    display: flex;
 `
 
 const PersonGrid = () => {
@@ -23,8 +36,8 @@ const PersonGrid = () => {
     }, [])
     console.log('b', data)
     return (
-      <div>
-        <Title>Title</Title>
+        <FlexRow>
+      <FlexCenterDiv>
         {data.map(character => 
             <PersonCard
             key={character.name} 
@@ -35,7 +48,8 @@ const PersonGrid = () => {
             height={character.height}
             />
         )}
-      </div>
+      </FlexCenterDiv>
+      </FlexRow>
     );
   }
   

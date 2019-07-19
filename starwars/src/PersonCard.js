@@ -3,8 +3,12 @@ import styled from 'styled-components'
 import { Divider, Header, Icon, Table } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
+const CardContainer = styled.div`
+    // width: 300px;
+`
+
 const PersonCard = (props) => (
-    <React.Fragment>
+    <CardContainer>
       <Divider horizontal>
         <Header as='h4'>
           <Icon name='user' />
@@ -36,7 +40,7 @@ const PersonCard = (props) => (
           </Table.Row>
         </Table.Body>
       </Table>
-    </React.Fragment>
+    </CardContainer>
   )
   
   export default PersonCard
