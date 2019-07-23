@@ -33,10 +33,6 @@ const PersonCard = (props) => (
     <Table definition>
       <Table.Body>
         <Table.Row>
-          <Table.Cell>Name</Table.Cell>
-          <Table.Cell>{props.eye_color}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
           <Table.Cell>Eye Color</Table.Cell>
           <Table.Cell>{props.eye_color}</Table.Cell>
         </Table.Row>
